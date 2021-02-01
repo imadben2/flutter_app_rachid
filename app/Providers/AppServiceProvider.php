@@ -2,19 +2,11 @@
 
 namespace App\Providers;
 
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Schema;
-use Laravel\Passport\Passport;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
-
-    protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
-    ];
-
     /**
-     * 
      * Register any application services.
      *
      * @return void
@@ -31,9 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
-        $this->registerPolicies();
- 
-        Passport::routes();
+        //
     }
 }
